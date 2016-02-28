@@ -406,7 +406,7 @@ extern EAGLContext *CCRenderDispatchSetupGL(EAGLRenderingAPI api, EAGLSharegroup
 	[fence.handlers addObject:handler];
 }
 
--(void)beginFrame {}
+-(void)beginFrame { [EAGLContext setCurrentContext:self.context]; }
 
 -(void)presentFrame
 {
